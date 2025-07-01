@@ -1,0 +1,95 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    var user = "Qasim";
+
+    var cards = new List<(string Title, string Description)>
+    {
+        ("Learn ASP.NET Core", "Master building powerful web apps using C# and Razor."),
+        ("Practice C#", "Sharpen your C# logic and OOP fundamentals."),
+        ("Explore LINQ", "Filter, map, and query like a boss."),
+        ("Deploy Website", "Go live with your dynamic website 🚀")
+    };
+}
+
+@if (user != "Qasim")
+{
+    <div class="text-center">
+        <h1><strong>Incorrect User :(</strong></h1>
+    </div>
+}
+else
+{
+    <div class="text-center">
+        <h1>Welcome to My Dynamic Website</h1>
+        <p>This is the Home Page of my Website.</p>
+        <p>Use the sidebar to navigate through different sections.</p>
+        <p class="text-muted">Today is <strong>@DateTime.Now.ToString("dddd, dd MMMM yyyy")</strong></p>
+    </div>
+
+    <div class="card-container">
+        @foreach (var card in cards)
+        {
+            <div class="card">
+                <h2>@card.Title</h2>
+                <p>@card.Description</p>
+                <button>Explore</button>
+            </div>
+        }
+    </div>
+
+
+    @* @{ *@
+        // int x = 10;
+        // int y = 12;
+        // int sum = x + y;
+        // Console.WriteLine(sum);
+
+        // int Marks = 75;
+        // if (Marks >= 90)
+        // {
+        //     <text><p>A-1 Grade</p></text>
+        // }
+        // else if(Marks >= 75)
+        // {
+        //     <text><p>A Grade</p></text>
+        // }
+        // else if(Marks >= 70)
+        // {
+        //     <text><p>B Grade</p></text>
+        // }
+        // else if(Marks >= 60)
+        // {
+        //     <text><p>C Grade</p></text>
+        // }
+
+        // bool isLoggedIn = true;
+        // if (isLoggedIn)
+        // {
+        //     <text><p>Welcome User :)</p></text>
+        // }
+        // else
+        // {
+        //     <text><p>Please Login Again</p></text>
+        // }
+
+        // for(int i = 1; i <= 5; i++)  // Fixed loop condition!
+        // {
+        //     <text><p>Number : @i</p></text>
+        // }
+
+        // int number = 5;
+        // for(int i = 1; i <= 10; i++)  // Fixed loop condition!
+        // {
+        //     int result = number*i;
+        //     <text><p>@number x @i = @result</p></text>
+        // }
+
+        // List<string> cities = new List<string> { "Karachi", "Lahore", "Islamabad" };
+        // foreach (var city in cities)
+        // {
+        //     <text><p>@city</p></text>
+        // }
+    }
+
+@*     <p class="text-center">Today is @DateTime.Now.ToString("dddd, dd MMMM, yyyy")</p> *@
+
